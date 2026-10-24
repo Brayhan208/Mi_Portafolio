@@ -17,7 +17,7 @@ const { title, description } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		
 		<!-- Carga de Tailwind CSS -->
-		<script src="https://cdn.tailwindcss.com"></script>
+		<script is:inline src="https://cdn.tailwindcss.com"></script>
 
 		<title>{title}</title>
 		<meta name="title" content={title} />
