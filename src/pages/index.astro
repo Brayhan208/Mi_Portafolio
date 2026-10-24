@@ -265,15 +265,15 @@ const SKILLS_SOFT = ["Trabajo en Equipo", "Resolución de Problemas", "Liderazgo
 
     <!-- Formulario de Contacto Funcional -->
 <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
-  <!-- Tu Access Key de Web3Forms -->
+  <!-- 1. Clave de acceso (Asegúrate de que lleve comillas "" y guion bajo en access_key) -->
   <input type="hidden" name="access_key" value="db0719d0-4a54-433e-827a-a5a4596f0248" />
 
-  <!-- Asunto personalizado del correo -->
- <input type="hidden" name="access_key" value="db0719d0-4a54-433e-827a-a5a4596f0248" />
+  <!-- 2. Asunto del correo -->
+  <input type="hidden" name="subject" value="Nuevo mensaje desde mi Portafolio Web" />
 
-  <!-- Nombre -->
+  <!-- Campo Nombre -->
   <div>
-    <label for="name" class="block text-sm font-medium text-slate-300 mb-1">Nombre</label>
+    <label for="name" class="block text-sm font-medium mb-1">Nombre</label>
     <input 
       type="text" 
       name="name" 
@@ -284,9 +284,9 @@ const SKILLS_SOFT = ["Trabajo en Equipo", "Resolución de Problemas", "Liderazgo
     />
   </div>
 
-  <!-- Email -->
+  <!-- Campo Email -->
   <div>
-    <label for="email" class="block text-sm font-medium text-slate-300 mb-1">Correo Electrónico</label>
+    <label for="email" class="block text-sm font-medium mb-1">Correo Electrónico</label>
     <input 
       type="email" 
       name="email" 
@@ -297,9 +297,9 @@ const SKILLS_SOFT = ["Trabajo en Equipo", "Resolución de Problemas", "Liderazgo
     />
   </div>
 
-  <!-- Mensaje -->
+  <!-- Campo Mensaje -->
   <div>
-    <label for="message" class="block text-sm font-medium text-slate-300 mb-1">Mensaje</label>
+    <label for="message" class="block text-sm font-medium mb-1">Mensaje</label>
     <textarea 
       name="message" 
       id="message" 
@@ -310,7 +310,7 @@ const SKILLS_SOFT = ["Trabajo en Equipo", "Resolución de Problemas", "Liderazgo
     ></textarea>
   </div>
 
-  <!-- Botón -->
+  <!-- Botón de Envío -->
   <button 
     type="submit" 
     class="w-full py-3 px-6 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg transition-colors cursor-pointer"
@@ -318,6 +318,7 @@ const SKILLS_SOFT = ["Trabajo en Equipo", "Resolución de Problemas", "Liderazgo
     Enviar Mensaje
   </button>
 </form>
+
 </section>
 
 
