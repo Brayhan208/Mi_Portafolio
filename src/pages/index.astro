@@ -1,11 +1,302 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const PERSONAL_INFO = {
+  name: "Brayhan Gonzalez Tapias",
+  shortName: "Brayhan Gonzalez",
+  title: "Estudiante de Ingeniería Informática & Técnico en Sistemas",
+  location: "Sabaneta, Antioquia, Colombia",
+  email: "brayhangt208@gmail.com",
+  phone: "+57 313 634 6864",
+  github: "https://github.com/Brayhan208",
+  linkedin: "https://linkedin.com/in/brayhangt",
+  alura: "https://app.aluracursos.com/user/brayhangt208",
+  about: "Estudiante de Ingeniería Informática y Técnico en Sistemas con bases sólidas en Python, JavaScript, C++ y desarrollo web. Combino mi formación técnica con experiencia práctica en gestión de contenido técnico, atención al usuario y liderazgo. Analítico, adaptable y enfocado en construir código limpio y eficiente."
+};
+
+const PROJECTS = [
+  {
+    title: "Quiosco Lector",
+    subtitle: "Proyecto Académico - Tercer Semestre",
+    description: "Desarrollo de la interfaz web para un quiosco lector, aplicando maquetación HTML/CSS y lógica de programación aprendida durante la formación en Oracle Next Education (ONE).",
+    tags: ["HTML5", "CSS3", "JavaScript", "ONE / Alura"],
+    github: "https://github.com/Brayhan208/Quiosco_Lector"
+  },
+  {
+    title: "Proyectos en Desarrollo / Algoritmos",
+    subtitle: "Repositorios de Aprendizaje",
+    description: "Colección de ejercicios y proyectos aplicando fundamentos de programación en Python, C++ y Java enfocados en la resolución de problemas y lógica.",
+    tags: ["Python", "C++", "Java", "Lógica de Programación"],
+    github: "https://github.com/Brayhan208"
+  }
+];
+
+const EXPERIENCE = [
+  {
+    date: "Abril 2026 - Julio 2026",
+    role: "Community Manager (Remoto)",
+    company: "Ingeniero Binario (Instagram)",
+    description: "Gestión y creación de contenido técnico especializado. Producción del resumen semanal 'Esta Semana en Tech' y el quiz interactivo de programación 'Code Time'. Contribución a la estrategia digital de la comunidad."
+  },
+  {
+    date: "Junio 2025 - Febrero 2026",
+    role: "Auxiliar Operativo",
+    company: "Cinemas Cineprox",
+    description: "Optimización de la experiencia del cliente y supervisión directa de funciones operativas clave en el establecimiento."
+  },
+  {
+    date: "Diciembre 2023 - Febrero 2024",
+    role: "Auxiliar Operativo & Líder de Equipo",
+    company: "Cinemas Procinal",
+    description: "Liderazgo de equipo operativo durante el primer mes de apertura de instalaciones y gestión diaria de flujos de trabajo."
+  }
+];
+
+const EDUCATION = [
+  {
+    date: "2024 - Presente (En curso)",
+    title: "Ingeniería Informática",
+    institution: "Politécnico Colombiano Jaime Isaza Cadavid"
+  },
+  {
+    date: "Diciembre 2022",
+    title: "Técnico Laboral en Auxiliar de Sistemas Informáticos",
+    institution: "Politécnico Colombiano Jaime Isaza Cadavid"
+  },
+  {
+    date: "Grupo 7",
+    title: "Programa Oracle Next Education (ONE)",
+    institution: "Alura Latinoamérica - Formación en Programación y Lógica"
+  }
+];
+
+const SKILLS_TECH = ["Python", "JavaScript", "C++", "HTML5", "CSS3", "Java (Básico)", "Git & GitHub"];
+const SKILLS_SOFT = ["Trabajo en Equipo", "Resolución de Problemas", "Liderazgo", "Comunicación Efectiva", "Pensamiento Analítico"];
 ---
 
-<Layout>
-	<Welcome />
+<Layout 
+	title={`${PERSONAL_INFO.shortName} | Portafolio Profesional`} 
+	description={`${PERSONAL_INFO.title} - Portafolio e información profesional.`}
+>
+<!-- Navbar / Header -->
+<header class="fixed top-0 w-full bg-slate-950/80 backdrop-blur-md z-50 border-b border-slate-800/60">
+    <nav class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center" aria-label="Navegación">
+        <a href="#" class="text-lg font-bold tracking-tight text-slate-100 hover:text-indigo-400 transition">
+            Brayhan Gonzalez
+        </a>
+        <ul class="flex space-x-6 text-sm font-medium text-slate-300">
+            <li><a href="#sobre-mi" class="hover:text-indigo-400 transition">Sobre mí</a></li>
+            <li><a href="#trayectoria" class="hover:text-indigo-400 transition">Trayectoria</a></li>
+            <li><a href="#proyectos" class="hover:text-indigo-400 transition">Proyectos</a></li>
+            <li><a href="#contacto" class="hover:text-indigo-400 transition">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+	<main class="max-w-5xl mx-auto px-6 pt-32 pb-20 space-y-28 relative">
+		
+		<!-- Efecto de luz ambiental de fondo -->
+		<div class="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-r from-indigo-600/15 via-sky-500/15 to-emerald-500/10 blur-[120px] -z-10 pointer-events-none rounded-full"></div>
+
+		<!-- Hero Section -->
+		<section id="sobre-mi" class="space-y-6">
+			<div class="flex flex-wrap items-center gap-3">
+				<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-950/60 text-indigo-300 border border-indigo-800/50 backdrop-blur-sm">
+					<svg class="w-3.5 h-3.5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+					{PERSONAL_INFO.location}
+				</span>
+				<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-950/60 text-emerald-300 border border-emerald-800/50 backdrop-blur-sm">
+					<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+					Disponible para proyectos y ofertas
+				</span>
+			</div>
+
+			<h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-100 leading-tight">
+				Hola, soy <span class="bg-gradient-to-r from-indigo-400 via-sky-400 to-emerald-400 bg-clip-text text-transparent">{PERSONAL_INFO.name}</span>
+			</h1>
+
+			<p class="text-lg sm:text-xl font-medium text-indigo-300/90">
+				{PERSONAL_INFO.title}
+			</p>
+
+			<p class="text-slate-400 max-w-3xl leading-relaxed text-base">
+				{PERSONAL_INFO.about}
+			</p>
+
+			<!-- Botones con Iconos SVG Limpios -->
+			<div class="flex flex-wrap gap-3 pt-3">
+				<a href="#contacto" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold rounded-lg transition shadow-lg shadow-indigo-600/20 hover:-translate-y-0.5 flex items-center gap-2">
+					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+					Contactarme
+				</a>
+				<a href="/cv.pdf" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700/80 hover:border-slate-600 text-sm font-semibold rounded-lg transition hover:-translate-y-0.5 flex items-center gap-2">
+					<svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+					Descargar CV (PDF)
+				</a>
+				<a href={PERSONAL_INFO.github} target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700/80 hover:border-slate-600 text-sm font-semibold rounded-lg transition hover:-translate-y-0.5 flex items-center gap-2">
+					<svg class="w-4 h-4 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+					GitHub
+				</a>
+				<a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700/80 hover:border-slate-600 text-sm font-semibold rounded-lg transition hover:-translate-y-0.5 flex items-center gap-2">
+					<svg class="w-4 h-4 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+					LinkedIn
+				</a>
+			</div>
+
+			<!-- Badges de Habilidades -->
+			<div class="pt-6 border-t border-slate-800/80 space-y-4">
+				<div>
+					<h3 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Tecnologías & Lenguajes</h3>
+					<div class="flex flex-wrap gap-2">
+						{SKILLS_TECH.map(skill => (
+							<span class="px-3 py-1 bg-slate-900/80 text-indigo-300 rounded-md text-xs font-mono border border-slate-800/80 hover:border-indigo-500/40 transition">
+								{skill}
+							</span>
+						))}
+					</div>
+				</div>
+
+				<div>
+					<h3 class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Habilidades Blandas</h3>
+					<div class="flex flex-wrap gap-2">
+						{SKILLS_SOFT.map(skill => (
+							<span class="px-3 py-1 bg-slate-900/60 text-emerald-300 rounded-md text-xs font-sans border border-slate-800/80 hover:border-emerald-500/40 transition">
+								{skill}
+							</span>
+						))}
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Trayectoria & Educación (Doble Columna) -->
+		<section id="trayectoria" class="scroll-mt-24 space-y-8">
+			<h2 class="text-2xl font-bold text-slate-100 flex items-center gap-2">
+				<span class="text-indigo-400">#</span> Trayectoria & Educación
+			</h2>
+
+			<div class="grid md:grid-cols-2 gap-10">
+				<!-- Columna 1: Experiencia -->
+				<div class="space-y-6">
+					<h3 class="text-lg font-semibold text-indigo-300 flex items-center gap-2 border-b border-slate-800 pb-3">
+						<svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+						Experiencia Laboral
+					</h3>
+					<div class="relative border-l border-slate-800/80 ml-2 space-y-6 pl-6">
+						{EXPERIENCE.map(item => (
+							<article class="relative group">
+								<div class="absolute -left-[30px] top-1.5 w-2.5 h-2.5 rounded-full bg-indigo-500 ring-4 ring-slate-950 group-hover:scale-125 transition"></div>
+								<time class="text-xs font-mono text-indigo-400">{item.date}</time>
+								<h4 class="text-base font-bold text-slate-100 mt-0.5">{item.role}</h4>
+								<p class="text-xs font-medium text-slate-400 mb-2">{item.company}</p>
+								<p class="text-xs text-slate-300 leading-relaxed">{item.description}</p>
+							</article>
+						))}
+					</div>
+				</div>
+
+				<!-- Columna 2: Educación -->
+				<div class="space-y-6">
+					<h3 class="text-lg font-semibold text-emerald-300 flex items-center gap-2 border-b border-slate-800 pb-3">
+						<svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+						Educación & Certificaciones
+					</h3>
+					<div class="relative border-l border-slate-800/80 ml-2 space-y-6 pl-6">
+						{EDUCATION.map(item => (
+							<article class="relative group">
+								<div class="absolute -left-[30px] top-1.5 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-4 ring-slate-950 group-hover:scale-125 transition"></div>
+								<time class="text-xs font-mono text-emerald-400">{item.date}</time>
+								<h4 class="text-base font-bold text-slate-100 mt-0.5">{item.title}</h4>
+								<p class="text-xs text-slate-400">{item.institution}</p>
+							</article>
+						))}
+					</div>
+
+					<div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800/80 space-y-2 mt-4">
+						<h4 class="text-xs font-mono uppercase text-slate-400">Idiomas & Formación Adicional</h4>
+						<p class="text-xs text-slate-300">🗣️ <strong>Inglés:</strong> Nivel A1 (Centro Colombo Americano de Medellín)</p>
+						<p class="text-xs text-slate-300">📚 <strong>LinkedIn Learning:</strong> HTML/CSS, Lógica de Programación y Java</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Proyectos Destacados -->
+		<section id="proyectos" class="scroll-mt-24 space-y-8">
+			<h2 class="text-2xl font-bold text-slate-100 flex items-center gap-2">
+				<span class="text-indigo-400">#</span> Proyectos Destacados
+			</h2>
+
+			<div class="grid md:grid-cols-2 gap-6">
+				{PROJECTS.map(project => (
+					<article class="p-6 rounded-xl bg-slate-900/40 border border-slate-800 hover:border-indigo-500/50 transition duration-200 flex flex-col justify-between group hover:-translate-y-1">
+						<div>
+							<span class="text-xs font-mono text-indigo-400">{project.subtitle}</span>
+							<h3 class="text-xl font-bold text-slate-100 mt-1 mb-2 group-hover:text-indigo-300 transition">{project.title}</h3>
+							<p class="text-xs text-slate-400 mb-4 leading-relaxed">{project.description}</p>
+							<div class="flex flex-wrap gap-2 mb-6">
+								{project.tags.map(tag => (
+									<span class="text-[11px] font-mono px-2.5 py-1 bg-indigo-950/80 text-indigo-300 rounded border border-indigo-800/40">
+										{tag}
+									</span>
+								))}
+							</div>
+						</div>
+						<div class="flex gap-4 text-xs font-semibold pt-3 border-t border-slate-800/60">
+							<a href={project.github} target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white transition flex items-center gap-1.5">
+								<svg class="w-4 h-4 text-slate-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+								Ver en GitHub →
+							</a>
+						</div>
+					</article>
+				))}
+			</div>
+		</section>
+
+<!-- Contacto Directo -->
+<section id="contacto" class="scroll-mt-24 space-y-8 text-center py-12 border-t border-slate-800/80">
+    <div class="space-y-3">
+        <h2 class="text-3xl font-extrabold text-slate-100">¿Hablamos?</h2>
+        <p class="text-slate-400 max-w-md mx-auto text-sm leading-relaxed">
+            Escríbeme un mensaje directo a través del formulario o por mis redes sociales.
+        </p>
+    </div>
+
+    <!-- Formulario de Contacto Funcional -->
+    <form action="https://api.web3forms.com/submit" method="POST" class="max-w-xl mx-auto text-left bg-slate-900/50 p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-4">
+        <!-- Clave de API gratuita de Web3Forms -->
+        <input type="hidden" name="access_key" value="TU_ACCESS_KEY_AQUI" />
+        <input type="hidden" name="from_name" value="Portafolio Web - Brayhan" />
+        <input type="hidden" name="subject" value="Nuevo mensaje desde tu Portafolio Web" />
+
+        <div>
+            <label for="name" class="block text-xs font-mono text-slate-300 mb-1">Tu Nombre</label>
+            <input type="text" name="name" id="name" required placeholder="Ej. Carlos Pérez" class="w-full px-4 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 transition" />
+        </div>
+
+        <div>
+            <label for="email" class="block text-xs font-mono text-slate-300 mb-1">Tu Correo Electrónico</label>
+            <input type="email" name="email" id="email" required placeholder="tuemail@ejemplo.com" class="w-full px-4 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 transition" />
+        </div>
+
+        <div>
+            <label for="message" class="block text-xs font-mono text-slate-300 mb-1">Mensaje</label>
+            <textarea name="message" id="message" rows="4" required placeholder="Cuéntame sobre tu proyecto o propuesta..." class="w-full px-4 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-indigo-500 transition resize-none"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm rounded-lg transition shadow-lg shadow-indigo-600/25 flex items-center justify-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+            Enviar Mensaje
+        </button>
+    </form>
+</section>
+
+
+	</main>
+
+	<!-- Footer -->
+	<footer class="border-t border-slate-900 text-center py-8 text-xs text-slate-500">
+		© {new Date().getFullYear()} {PERSONAL_INFO.name}. Desarrollado con Astro & Tailwind CSS.
+	</footer>
 </Layout>
